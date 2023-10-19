@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('log_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('log_json');
+            $table->string('notification');
+            $table->unsignedBigInteger('evseId')->nullable();
+            $table->string('externalSessionId')->nullable();
+            $table->unsignedBigInteger('sessionId')->nullable();
+            $table->unsignedBigInteger('chargePointId')->nullable();
             $table->timestamps();
         });
     }

@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('taxes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sessionId');
+            $table->unsignedBigInteger('sessionId');
             $table->integer('taxId');
             $table->integer('taxPercentage');
             $table->timestamps();
-            $table->foreign('sessionId')->references('id')->on('sessions');
         });
     }
 

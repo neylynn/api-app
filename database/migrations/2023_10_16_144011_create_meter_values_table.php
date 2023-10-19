@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('meter_values', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sessionId');
+            $table->unsignedBigInteger('log_id'); // Foreign key to link to logs table
             $table->string('unit');
             $table->string('measurand');
             $table->decimal('value', 10, 2);
-            $table->timestamp('timestamp');
+            $table->string('timestamp'); 
             $table->timestamps();
-            $table->foreign('sessionId')->references('id')->on('sessions');
         });
     }
 

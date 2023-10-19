@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "b268976a-e492-47d8-a744-bc763a94ace5",
+		"name": "api-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7929284"
+	},
+	"item": [
+		{
+			"name": "save_log",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"evseId\":95,\"notification\":\"SessionMeterValuesNotification\",\"meterValues\":[{\"unit\":\"A\",\"measurand\":\"Current Consumed\",\"value\":88,\"timestamp\":\"2023-09-29T16:00:12.000000Z\"},{\"unit\":\"V\",\"measurand\":\"Voltage\",\"value\":477,\"timestamp\":\"2023-09-29T16:00:12.000000Z\"},{\"unit\":\"W\",\"measurand\":\"Power Offered\",\"value\":42371,\"timestamp\":\"2023-09-29T16:00:12.000000Z\"},{\"unit\":\"Wh\",\"measurand\":\"Energy Consumed\",\"value\":48900,\"timestamp\":\"2023-09-29T16:00:12.000000Z\"},{\"unit\":\"Percent\",\"measurand\":\"State Of Charge\",\"value\":92,\"timestamp\":\"2023-09-29T16:00:12.000000Z\"}],\"externalSessionId\":\"\",\"sessionId\":66481,\"chargePointId\":89}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/save_log",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"save_log"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

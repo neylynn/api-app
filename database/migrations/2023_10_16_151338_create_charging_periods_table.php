@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('charging_periods', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sessionId');
+            $table->unsignedBigInteger('sessionId');
             $table->decimal('amount', 10, 2);
-            $table->timestamp('stoppedAt');
-            $table->timestamp('startedAt');
+            $table->string('stoppedAt')->nullable();
+            $table->string('startedAt')->nullable();
             $table->string('state');
             $table->decimal('energy', 10, 2);
             $table->timestamps();
-            $table->foreign('sessionId')->references('id')->on('sessions');
         });
     }
 

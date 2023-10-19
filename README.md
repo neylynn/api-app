@@ -7,6 +7,45 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Getting Started
+
+First, open the cloned folder in your preferred code editor, install the required
+dependencies by running the following command in the terminal:
+Noted : Your machine need to have php 8.1^, composer, and mysql.
+
+```bash
+composer install
+
+update .env file with your local environment and database credentials
+
+php artisan key:generate
+
+php artisan config:cache
+
+Then, you need to run migration command.
+
+php artisan migrate
+
+Then, run the development server:
+
+php artisan serve
+```
+Open [http://localhost:8000](http://localhost:8000) with your browser to see the result.
+
+I have developed this API project with two ways to retrieve log data.
+The first way is to send log data in JSON format from Postman or other applications. You can set the API end point to localhost:8000/api/save_log with the POST method. You need to go to Body Tag,  select Raw, and choose JSON from the drop-down menu.
+Then, you can send log data via Postman. After your logs are successfully saved into the database, you can see the success status in the postman response. Then, you can check the data in the database. I've added postman collection to the project's root "api-app.postman_collection.json".
+
+I will show a sample postman request with screenshots below:
+
+![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214120.png') }} )
+
+![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214151.png') }} )
+
+![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214212.png') }} )
+
+The second way is to save log data with the command "php artisan porcess:logs". In this way, I need to know your endpoint. Then, I've set up this process with your endpoint. So, you can directly get and save data to the database automatically. You can run this command with a schedule by using cron jobs.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

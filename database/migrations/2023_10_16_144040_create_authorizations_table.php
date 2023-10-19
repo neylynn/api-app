@@ -13,18 +13,16 @@ return new class extends Migration
     {
         Schema::create('authorizations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sessionId');
-            $table->timestamp('createdAt');
+            $table->unsignedBigInteger('sessionId'); // Foreign key to link to sessions table
+            $table->string('createdAt');
             $table->string('method');
-            $table->string('rfidTagUid');
-            $table->timestamp('lastUpdatedAt');
+            $table->string('rfidTagUid')->nullable();
+            $table->string('lastUpdatedAt');
             $table->string('source');
-            $table->integer('id');  
-            $table->string('rejectionReason')->nullable();
-            $table->integer('userId');
+            $table->text('rejectionReason')->nullable();
+            $table->unsignedBigInteger('userId');
             $table->string('status');
             $table->timestamps();
-            $table->foreign('sessionId')->references('id')->on('sessions');
         });
     }
 
