@@ -38,11 +38,14 @@ Then, you can send log data via Postman. After your logs are successfully saved 
 
 I will show a sample postman request with screenshots below:
 
-![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214120.png') }} )
+![image 1](/public/images/Screenshot 2023-10-19 214120.png)
+![image 2](/public/images/Screenshot 2023-10-19 214151.png)
+![image 3](/public/images/Screenshot 2023-10-19 214212.png)
+<!-- ![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214120.png') }} )
 
 ![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214151.png') }} )
 
-![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214212.png') }} )
+![Laravel Logo]( {{ asset('images/Screenshot 2023-10-19 214212.png') }} ) -->
 
 The second way is to save log data with the command "php artisan porcess:logs". In this way, I need to know your endpoint. Then, I've set up this process with your endpoint. So, you can directly get and save data to the database automatically. You can run this command with a schedule by using cron jobs.
 
