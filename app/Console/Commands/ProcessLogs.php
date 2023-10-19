@@ -59,14 +59,14 @@ class ProcessLogs extends Command
                     ]);
                 }
             }else {
-
+    
                 $log = LogData::create([
                     'notification' => $data['notification'],
                 ]);
     
                 $session = Session::create([
                     'log_id' => $log->id,
-                    'socPercent' => $data['session']['socPercent'],
+                    'socPercent' => $data['session']['socPercent'] ?? null,
                     'extendingSessionId' => $data['session']['extendingSessionId'],
                     'lastUpdatedAt' => $data['session']['lastUpdatedAt'],
                     'nonBillableEnergy' => $data['session']['nonBillableEnergy'],
@@ -81,7 +81,6 @@ class ProcessLogs extends Command
                     'paymentMethodId' => $data['session']['paymentMethodId'],
                     'currency' => $data['session']['currency'],
                     'sessionId' => $data['session']['id'],
-                    'socPercent' => $data['session']['socPercent'],
                     'chargePointId' => $data['session']['chargePointId'],
                     'paymentStatus' => $data['session']['paymentStatus'],
                     'energy' => $data['session']['energy'],
