@@ -36,13 +36,7 @@ I have developed this API project with two ways to retrieve log data.
 The first way is to send log data in JSON format from Postman or other applications. You can set the API end point to localhost:8000/api/save_log with the POST method. You need to go to Body Tag,  select Raw, and choose JSON from the drop-down menu.
 Then, you can send log data via Postman. After your logs are successfully saved into the database, you can see the success status in the postman response. Then, you can check the data in the database. I've added postman collection to the project's root "api-app.postman_collection.json".
 
-I will show a sample postman request with screenshots below:
-
-![image 1](http://localhost:8000/images/img1.png)
-
-![image 2](http://localhost:8000/images/img2.png)
-
-![image 3](http://localhost:8000/images/img3.png)
+You can see the sample postman request images under the public/images folder.
 
 The second way is to save log data with the command "php artisan porcess:logs". In this way, I need to know your endpoint. Then, I've set up this process with your endpoint. So, you can directly get and save data to the database automatically. You can run this command with a schedule by using cron jobs.
 
